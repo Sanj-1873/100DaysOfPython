@@ -43,7 +43,15 @@ for walk in range(1000):
         timmy.right(90)
     else:
         timmy.left(90)
+turtle.resetscreen()
 
+# Spirograph 
+timmy.width(1)
+for i in range(0,360,20):
+    # timmy.tiltangle(i)
+    timmy.pencolor(randrange(255),randrange(255),randrange(255))
+    timmy.circle(50)
+    timmy.setheading(i)
 
 screen = Screen()
 screen.exitonclick()
