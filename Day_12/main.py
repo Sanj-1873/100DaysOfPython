@@ -39,17 +39,23 @@ game_is_on = True
 
 while game_is_on:
     time.sleep(0.1)
-    if(ball.ycor() > 290 or ball.ycor() < -290 ):
+    screen.update()
+    if ball.ycor() > 290 or ball.ycor() < -290:
         ball.bounce()
-        ball.move_ball()
-    else:
-        ball.move_ball()
+       
+
+    if ball.distance(player_1) < 50 and ball.xcor() > 320 or ball.distance(player_2) < 50 and ball.xcor() < -320:
+        print("ball collision")
+        ball.paddle_collision()
+    
+    
+    ball.move_ball()
     screen.listen()
     screen.onkey(player_1.up,"Up")
     screen.onkey(player_1.down, "Down")
     screen.onkey(player_2.up,"w")
     screen.onkey(player_2.down, "s")
-    screen.update()
+
 
 
 screen.update()    
