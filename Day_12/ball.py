@@ -19,3 +19,7 @@ class Ball(Turtle):
 
     def paddle_collision(self):
         self.x_move = -(self.x_move)
+
+    def reset_ball(self):
+        self.goto(0,0)
+        self.x_move *= -1 
