@@ -4,7 +4,7 @@ MOVE_INCREMENT = 10
 
 from turtle import Turtle
 import random
-class CarManager(Turtle ):
+class CarManager(Turtle):
     def __init__(self, y_pos):
         self.y_pos = y_pos
         super().__init__()
@@ -15,6 +15,6 @@ class CarManager(Turtle ):
         self.goto(300, self.y_pos)
        
     def move_car(self):
-        self.backward(10)
+        self.backward(MOVE_INCREMENT)
         
         
