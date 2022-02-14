@@ -13,6 +13,7 @@ class Scoreboard(Turtle):
 
     def game_over(self):
         self.clear()
+        self.goto(0,0)
         self.write("GAME OVER!", font= FONT)
     
     def reset_screen(self):

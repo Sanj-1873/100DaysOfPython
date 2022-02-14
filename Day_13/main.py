@@ -37,7 +37,7 @@ while game_is_on:
             # print("game over")
             
             game_is_on = False 
-            break 
+            scoreboard.game_over() 
     
             print("collision")
 
@@ -52,4 +52,4 @@ while game_is_on:
         screen.onkey(player.move_turtle, "Up")
 
 
-scoreboard.game_over()
+
