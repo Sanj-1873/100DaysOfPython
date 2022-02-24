@@ -19,9 +19,11 @@ def get_mouse_click_coor(x, y):
 game_is_on = True
 correct_guesses = []
 
-while game_is_on:
+while len(correct_guesses) < 50:
     answer_state = screen.textinput(title="{}/50 correct".format(len(correct_guesses)), prompt="Guess a state")
     if answer_state:
+        if answer_state == "Exit":
+            break
         answer_state = answer_state.title()
         correct_state = df.state == answer_state
 
@@ -38,6 +40,9 @@ while game_is_on:
             y_cor = int(row.y)
             
             state = States(answer_state, x_cor, y_cor)
+
+# States to learn
+
 
 
 
