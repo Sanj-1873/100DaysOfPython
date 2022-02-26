@@ -16,3 +16,8 @@ def calculate(n,**kwargs):
 
 calculate(2, add=3, multiply=5)
 
+class Car:
+    def __init__(self, **kw):
+        self.make = kw.get("make")
+        self.model = kw.get("model")
+        
