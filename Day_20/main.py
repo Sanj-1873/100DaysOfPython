@@ -3,12 +3,16 @@ from tkinter import *
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
-def save(website, user, password):
-    with open("data.txt", 'a') as data:
-        data.write("{}, {}, {} \n".format(website, user, password))
+def save():
+    with open("data.txt", "a") as data:
+        website = website_input.get()
+        user = user_input.get()
+        password = password_input.get()
 
-def save_on_click():
-    save(website_input.get(), user_input.get(), password_input.get())
+        data.write("{}, {}, {} \n".format(website, user, password))
+        website_input.delete(0, END)
+        password_input.delete(0, END)
+
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("Password Manager")
@@ -54,7 +58,7 @@ gen_pass_button = Button(text="Generate Password")
 gen_pass_button.grid(row=3, column=2)
 
 # Adding add password button
-add_button = Button(text="Add", width=36, command=save_on_click)
+add_button = Button(text="Add", width=36, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 
 
