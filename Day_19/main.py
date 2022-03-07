@@ -82,8 +82,10 @@ start_button.grid(row=2, column=0)
 #Adding the reset button 
 reset_button = Button(text="Reset", command=reset_timer, bg=YELLOW, font=(FONT_NAME,12))
 reset_button.grid(row=2, column=2)
-window.mainloop()
+
 
 #Adding check mark label 
 check_label = Label(text="✓", fg=GREEN, bg=YELLOW)
 check_label.grid(row=3, column=1)
+
+window.mainloop()
